@@ -34,7 +34,7 @@ class Build
 
     def matrix_state
       if required_jobs.blank?
-        :passed
+        :failed
       elsif required_jobs.any?(&:canceled?)
         :canceled
       elsif required_jobs.any?(&:errored?)
